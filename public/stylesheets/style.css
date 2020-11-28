@@ -1,0 +1,51 @@
+body {
+  background: -webkit-linear-gradient(to right, #d7d3dd, #d1bbeb);
+  background: linear-gradient(to right, #d7d3dd, #d1bbeb);
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+    margin-bottom: 40px;
+}
+
+.row {
+    margin-bottom: 40px;
+}
+
+.overlay {
+  position: relative;
+  margin: 25px 0px 0px 0px;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(104, 33, 170);
+}
+
+.overlay-img {
+  position: relative;
+  opacity: 1;
+  display: block;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+  height: 300px; 
+  width: 100%;
+}
+
+.overlay-text {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+}
+
+.overlay:hover .overlay-text {
+    opacity: 1;
+}
+
+.overlay:hover .overlay-img {
+    opacity: .5
+}

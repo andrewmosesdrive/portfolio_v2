@@ -50,11 +50,11 @@ const headers = {
 };
 
 app.get("/", (req, res) => {
-  res.render("about");
+  res.render("about", { title: "About" });
 });
 
 app.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", { title: "About" });
 });
 
 app.get("/portfolio", (req, res) => {
@@ -69,7 +69,7 @@ app.get("/portfolio", (req, res) => {
       const data = JSON.parse(apiText);
       const currentProjects = data["data"]["user"]["pinnedItems"]["nodes"];
       console.log(currentProjects);
-      res.render("portfolio", { currentProjects });
+      res.render("portfolio", { currentProjects, title: "Portfolio" });
     })
     .catch((error) =>
       console.log(
@@ -80,7 +80,7 @@ app.get("/portfolio", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-  res.render("contact");
+  res.render("contact", { Title: "Contact" });
 });
 
 app.listen(PORT, function () {

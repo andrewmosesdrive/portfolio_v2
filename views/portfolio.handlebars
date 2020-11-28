@@ -1,10 +1,16 @@
 <div class="row">
-
-    <div class="col">
-        portfolio info goes here
-        {{#each currentProjects}}
-            <div>{{name}}</div>
-        {{/each}}
+    {{#each currentProjects}}
+    <div class="col-md-4">
+        <figure class="overlay shadow">
+            <a href="{{url}}"><img id="overlay-img" class="overlay-img" src="{{openGraphImageUrl}}"
+                    alt="Still image of {{name}}">
+                <div class="overlay-text">
+                    <h5 class="overlay-title">{{name}}</h5>
+                    <br>
+                    <h6 class="overlay-subtext">{{description}}</h6>
+                </div>
+            </a>
+        </figure>
     </div>
+    {{/each}}
 </div>
-
