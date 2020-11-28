@@ -1,13 +1,7 @@
-// packages needed
-// dotenv, node-fetch, express,
 const express = require("express");
-// const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
-// const path = require("path");
-// const fs = require("fs");
+const fetch = require("node-fetch");
 require("dotenv").config();
-// const githubData = require("./githubData")
-
 
 const PORT = process.env.PORT || 8080;
 
@@ -19,26 +13,76 @@ app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// assign variable an object with github credentials as properties
+const githubUser = {
+  accessToken: process.env.ACCESS_TOKEN,
+  userName: "andrewmosesdrive",
+};
+
+// variable for pinned projects query in graphql format
+const projectsQuery = {
+  query: `
+      query { 
+          user(login: "${githubUser.userName}"){
+            pinnedItems(first: 6, types: REPOSITORY) {
+              totalCount
+              nodes{
+                ... on Repository{
+                  name
+                  createdAt
+                  description
+                  url
+                  openGraphImageUrl
+                  }
+                }
+              }
+            }
+          }`,
+};
+
+// github api endpoint
+const githubEndpoint = "https://api.github.com/graphql";
+
+// headers variable following github docs
+const headers = {
+  "Content-Type": "application/json",
+  Authorization: "bearer " + githubUser.accessToken,
+};
+
 app.get("/", (req, res) => {
-  res.render("about")
-})
+  res.render("about");
+});
 
 app.get("/about", (req, res) => {
   res.render("about");
 });
 
 app.get("/portfolio", (req, res) => {
-  res.render("portfolio");
+  // fetch data and post it
+  fetch(githubEndpoint, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(projectsQuery),
+  })
+    .then((response) => response.text())
+    .then((apiText) => {
+      const data = JSON.parse(apiText);
+      const currentProjects = data["data"]["user"]["pinnedItems"]["nodes"];
+      console.log(currentProjects);
+      res.render("portfolio", { currentProjects });
+    })
+    .catch((error) =>
+      console.log(
+        "You hecked up tryin' to get the GitHub deets! Here's what went down: " +
+          error
+      )
+    );
 });
 
 app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-// console.log(githubData())
-
-app.listen(PORT, function() {
-  console.log("Listening on http://localhost:" + PORT)
+app.listen(PORT, function () {
+  console.log("Listening on http://localhost:" + PORT);
 });
-
-
