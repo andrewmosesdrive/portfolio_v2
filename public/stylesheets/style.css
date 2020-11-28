@@ -9,13 +9,17 @@ body {
     margin-bottom: 40px;
 }
 
+.nav-text {
+    color: rgb(128, 189, 240);
+}
+
 .row {
     margin-bottom: 40px;
 }
 
 .overlay {
   position: relative;
-  margin: 25px 0px 0px 0px;
+  margin: 28px 0px 0px 0px;
   width: 100%;
   text-align: center;
   background-color: rgb(104, 33, 170);
