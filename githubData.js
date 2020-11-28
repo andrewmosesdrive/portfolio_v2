@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 require("dotenv").config();
 
-function fetchGithubData() {
+function githubData() {
 
   // assign variable an object with github credentials as properties
   const githubUser = {
@@ -58,21 +58,21 @@ function fetchGithubData() {
       )
     );
 
-  // function createRepoEntries(currentProjects) {
+//   function createRepoEntries(currentProjects) {
 
-  //   currentProjects.forEach((currentProjects) => {
-  //     let projectTile = `
-  //       <div class="img-container">
-  //       <img src="${currentProjects.openGraphImageUrl}"</div>
-  //       <div><span>${currentProjects.description}</span>
-  //       <h5 class="card-title">${currentProjects.url}</h5>
-  //       </div>
-  //     `
-  //     console.log(projectTile)
-  //   })
-  // }
+//     currentProjects.forEach((currentProjects) => {
+//       let projectTile = `
+//         <div class="img-container">
+//         <img src="${currentProjects.openGraphImageUrl}"</div>
+//         <div><span>${currentProjects.description}</span>
+//         <h5 class="card-title">${currentProjects.url}</h5>
+//         </div>
+//       `
+//     //   console.log(projectTile)
+//     })
+//   }
 
-  // createRepoEntries(currentProjects)
+//   createRepoEntries(currentProjects)
 }
 
-module.exports = fetchGithubData;
+module.exports = githubData;

@@ -1,12 +1,12 @@
 // packages needed
 // dotenv, node-fetch, express,
 const express = require("express");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
-const path = require("path");
-const fs = require("fs");
+// const path = require("path");
+// const fs = require("fs");
 require("dotenv").config();
-const githubData = require("fetchGithubData")
+// const githubData = require("./githubData")
 
 
 const PORT = process.env.PORT || 8080;
@@ -20,7 +20,11 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("about")
+})
+
+app.get("/about", (req, res) => {
+  res.render("about");
 });
 
 app.get("/portfolio", (req, res) => {
@@ -31,8 +35,10 @@ app.get("/contact", (req, res) => {
   res.render("contact");
 });
 
+// console.log(githubData())
 
 app.listen(PORT, function() {
-  console.log("Listening on http://localhost:8080/")
-})
+  console.log("Listening on http://localhost:" + PORT)
+});
+
 
