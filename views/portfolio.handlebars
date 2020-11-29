@@ -1,31 +1,53 @@
-<div class="row">
-    <div class="col-md-8">
-        <div class="jumbotron bg-dark shadow">
-            <h1 class="display-3" style="color: #ececec;"><span style="color: #7332af;">Featured</span> Projects</h1>
-            <hr class="my-4">
-            <h5 style="color: #ececec;">Hover over a tile for details, then give it a click to view the corresponding repository on GitHub</h5>
+<div class="container content-container">
+    <div class="row jumbo-nav-row">
+        <div class="col-md-8">
+            <div class="jumbotron bg-dark shadow">
+                <h1 class="display-3" style="color: #ececec;"><span style="color: #7332af;">Featured</span> Projects
+                </h1>
+                <hr class="my-4">
+                <h5 style="color: #ececec;">Hover over a tile for details, then give it a click to view the
+                    corresponding
+                    repository on GitHub</h5>
+            </div>
         </div>
-    </div>
-    {{!-- <div class="col-md-4 chart-container">
+        {{!-- <div class="col-md-4 chart-container">
         <canvas id="myChart" class="myChart" height="260px"></canvas>
     </div> --}}
+        <div class="col-md-4 btn-col">
+            <div class="btn-group-vertical">
+                <div class="navigation-headline">
+                    <h3 class="dark"><span style="color: #7332af;">Nav</span>igation</h3>
+                </div>
+                <a href="/contact"></a><button type="button" class="btn btn-sm shadow btn-contact">Contact</button></a>
+                <button type="button" class="btn btn-sm shadow btn-about">About</button>
+                {{!-- <button type="button" class="btn btn-sm shadow btn-portfolio">Portfolio</button> --}}
+            </div>
+        </div>
+    </div>
+
+    <div class="row projects-row">
+        {{#each currentProjects}}
+        <div class="col-md-4">
+            <figure class="overlay shadow">
+                <a href="{{url}}" target="_blank"><img id="overlay-img" class="overlay-img shadow"
+                        src="{{openGraphImageUrl}}" alt="Still image of {{name}}">
+                    <div class="overlay-text">
+                        <h5 class="overlay-title">{{name}}</h5>
+                        <br>
+                        <h6 class="overlay-subtext">{{description}}</h6>
+                    </div>
+                </a>
+            </figure>
+        </div>
+        {{/each}}
+    </div>
 </div>
 
-<div class="row projects-row">
-    {{#each currentProjects}}
-    <div class="col-md-4">
-        <figure class="overlay shadow">
-            <a href="{{url}}" target="_blank"><img id="overlay-img" class="overlay-img shadow"
-                    src="{{openGraphImageUrl}}" alt="Still image of {{name}}">
-                <div class="overlay-text">
-                    <h5 class="overlay-title">{{name}}</h5>
-                    <br>
-                    <h6 class="overlay-subtext">{{description}}</h6>
-                </div>
-            </a>
-        </figure>
+<div class="row links-row">
+    <div class="col-sm-12">
+        
     </div>
-    {{/each}}
+
 </div>
 
 {{!-- <script>
