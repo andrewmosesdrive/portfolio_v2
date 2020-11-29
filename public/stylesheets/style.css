@@ -10,11 +10,7 @@ body {
 }
 
 .nav-text {
-    color: rgb(128, 189, 240);
-}
-
-.row {
-    margin-bottom: 40px;
+    color: #d1bbeb;
 }
 
 .overlay {
@@ -53,3 +49,11 @@ body {
 .overlay:hover .overlay-img {
     opacity: .5
 }
+
+.projects-row {
+    margin-bottom: 40px;
+}
+
+/* footer {
+    text-align: center;
+} */

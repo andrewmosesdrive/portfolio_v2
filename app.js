@@ -68,7 +68,7 @@ app.get("/portfolio", (req, res) => {
     .then((apiText) => {
       const data = JSON.parse(apiText);
       const currentProjects = data["data"]["user"]["pinnedItems"]["nodes"];
-      console.log(currentProjects);
+      // console.log(currentProjects);
       res.render("portfolio", { currentProjects, title: "Portfolio" });
     })
     .catch((error) =>

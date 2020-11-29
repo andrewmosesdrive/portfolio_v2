@@ -1,9 +1,22 @@
 <div class="row">
+    <div class="col-md-8">
+        <div class="jumbotron shadow">
+            <h1 class="display-3">Featured Projects</h1>
+            <hr class="my-4">
+            <h6>Hover over a tile for details, then give it a click to view the corresponding repository on GitHub</h6>
+        </div>
+    </div>
+    {{!-- <div class="col-md-4 chart-container">
+        <canvas id="myChart" class="myChart" height="260px"></canvas>
+    </div> --}}
+</div>
+
+<div class="row projects-row">
     {{#each currentProjects}}
     <div class="col-md-4">
         <figure class="overlay shadow">
-            <a href="{{url}}"><img id="overlay-img" class="overlay-img" src="{{openGraphImageUrl}}"
-                    alt="Still image of {{name}}">
+            <a href="{{url}}" target="_blank"><img id="overlay-img" class="overlay-img shadow"
+                    src="{{openGraphImageUrl}}" alt="Still image of {{name}}">
                 <div class="overlay-text">
                     <h5 class="overlay-title">{{name}}</h5>
                     <br>
@@ -14,3 +27,32 @@
     </div>
     {{/each}}
 </div>
+
+{{!-- <script>
+    let myChart = document.getElementById('myChart').getContext("2d");
+    let languageChart = new Chart(myChart, {
+        type: 'doughnut',
+        data: {
+            labels: ['JavaScript', 'Handlebars', 'CSS', 'HTML'],
+            datasets: [{
+                label: 'Repository Language Makeup',
+                data: [12, 19, 3, 5],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                ],
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script> --}}
