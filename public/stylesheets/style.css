@@ -52,6 +52,7 @@ a:hover, a:focus, a:active {
     transform-origin: center;
     transform: scale(1.3);
     transition: .5s ease;
+    color: white;
 }
 
 .btn-portfolio {
@@ -108,5 +109,26 @@ a:hover, a:focus, a:active {
 }
 
 .projects-row {
+    margin-bottom: 50px;
+}
+
+.fab {
+    color: #353434 !important;
+    
+    /* padding: 17px; */
+    margin: 10px;
+
+    /* border-radius: 50%; */
+}
+
+.fab:hover {
+    transform-origin: center;
+    transform: scale(1.3);
+    transition: .5s ease;
+    color: white;
+}
+
+.fab-row {
+    margin-top: 175px;
     margin-bottom: 50px;
 }
