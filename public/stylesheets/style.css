@@ -96,6 +96,18 @@ a:active {
   animation-name: slidein-to-left;
 }
 
+/* this button styling is specific to the about page, to otherwise keep the button slide in timings consistent */
+.btn-contact-aboutpg {
+    background-color: #7332af;
+    color: white;
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50% !important;
+    margin: 18px;
+    animation-duration: 2.33s;
+    animation-name: slidein-to-left;
+}
+
 .overlay {
   position: relative;
   margin: 28px 0px 0px 0px;
