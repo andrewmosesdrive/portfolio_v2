@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 require("dotenv").config();
 
 const PORT = process.env.PORT || 8080;
-const GMAIL_USER = process.env.GMAIL_USER;
-const GMAIL_PASS = process.env.GMAIL_PASS;
+const YAHOO_USER = process.env.YAHOO_USER;
+const YAHOO_PASS = process.env.YAHOO_PASS;
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
@@ -89,24 +89,32 @@ app.get("/contact", (req, res) => {
   res.render("contact", { Title: "Contact" });
 });
 
+app.get("/contact-failure", (req, res) => {
+  res.render("contact-failure", { Title: "Uh-oh!" });
+});
+
+app.get("/contact-success", (req, res) => {
+  res.render("contact-success", { Title: "Uh-oh!" });
+});
+
 app.post('/contact', (req, res) => {
   // Instantiate the SMTP server
   const smtpTrans = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
+    host: 'smtp.mail.yahoo.com',
     // secure defaults to port 465
     port: 465,
     secure: true,
-    // gmail credentials
+    // yahoo credentials
     auth: {
-      user: GMAIL_USER,
-      pass: GMAIL_PASS
+      user: YAHOO_USER,
+      pass: YAHOO_PASS
     }
   })
 
   // Specify what the email will look like
   const mailOpts = {
-    from: "Your sender info here", // This is ignored by Gmail
-    to: GMAIL_USER,
+    from: "andrewmosesdev@yahoo.com", // This is where the email is coming from
+    to: "andrewmosesdrive@gmail.com", // This is where it's going to
     subject: "You've got mail my dude!",
     text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
   }
@@ -114,10 +122,12 @@ app.post('/contact', (req, res) => {
   // Attempt to send the email
   smtpTrans.sendMail(mailOpts, (error, response) => {
     if (error) {
-      res.render('contact-failure') // Show a page indicating failure
+      console.log(error)
+      res.render('contact-failure') 
     }
     else {
-      res.render('contact-success') // Show a page indicating success
+      res.render('contact-success')
+      console.log(response)
     }
   })
 })

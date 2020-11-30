@@ -4,7 +4,9 @@
             <div class="jumbotron bg-dark shadow">
                 <h1 class="display-3" style="color: #ececec;">Say<span style="color: #7332af;"> Hello</span></h1>
                 <hr class="my-4">
-                <h5 style="color: #ececec;">Use the form below to shoot me an email. If you'd prefer reaching out via social media, or you're just interested in my writing, take your pick from the links at the very bottom of each page.</h5>
+                <h5 style="color: #ececec;">Use the form below to shoot me an email. If you'd prefer reaching out via
+                    social media, or you're curious about my writing, take your pick from the links at the very
+                    bottom of each page.</h5>
             </div>
         </div>
         {{!-- <div class="col-md-4 chart-container">
@@ -15,10 +17,37 @@
                 <div class="navigation-headline">
                     <h3 class="text-dark"><span style="color: #7332af;">Nav</span>igation</h3>
                 </div>
-                <a href="/contact"><button type="button" class="btn btn-sm shadow btn-contact">Contact</button></a>
+                <a href="/portfolio"><button type="button" class="btn btn-sm shadow btn-portfolio">Portfolio</button></a>
                 <a href="/about"><button type="button" class="btn btn-sm shadow btn-about">About</button></a>
                 {{!-- <button type="button" class="btn btn-sm shadow btn-portfolio">Portfolio</button> --}}
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <form action="/contact" id="contact-form" method="post" role="form" class=""
+>
+                <fieldset>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="name" name="name"
+                            placeholder="Required">
+                    </div>
+                     <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="text" class="form-control" id="email" aria-describedby="email" name="email"
+                            placeholder="Also required">
+                        <small id="emailHelp" class="form-text text-muted">Don't worry, I'll never share your email with
+                            anyone else (unless you ask me to).</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleTextarea">The Message</label>
+                        <textarea class="form-control" id="message" rows="3" name="message"
+                            placeholder="Yep, you guessed it; this field is required too!"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-email">Send it!</button>
+                </fieldset>
+            </form>
         </div>
     </div>
 
