@@ -27,7 +27,8 @@ const githubUser = {
 
 // variable for pinned projects query in graphql format
 const projectsQuery = {
-  query: `{ 
+  query: `
+      query { 
           user(login: "andrewmosesdrive"){
             pinnedItems(first: 6, types: REPOSITORY) {
               totalCount
