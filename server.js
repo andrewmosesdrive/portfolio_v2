@@ -29,7 +29,7 @@ const githubUser = {
 const projectsQuery = {
   query: `
       query { 
-          user(login: "${githubUser.userName}"){
+          user(login: "andrewmosesdrive"){
             pinnedItems(first: 6, types: REPOSITORY) {
               totalCount
               nodes{
