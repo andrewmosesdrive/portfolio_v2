@@ -94,7 +94,7 @@ app.get("/contact-failure", (req, res) => {
 });
 
 app.get("/contact-success", (req, res) => {
-  res.render("contact-success", { Title: "Uh-oh!" });
+  res.render("contact-success", { Title: "Success!" });
 });
 
 app.post('/contact', (req, res) => {
