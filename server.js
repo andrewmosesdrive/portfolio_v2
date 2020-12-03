@@ -86,15 +86,15 @@ app.get("/portfolio", (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-  res.render("contact", { Title: "Contact" });
+  res.render("contact", { title: "Contact" });
 });
 
 app.get("/contact-failure", (req, res) => {
-  res.render("contact-failure", { Title: "Uh-oh!" });
+  res.render("contact-failure", { title: "Uh-oh!" });
 });
 
 app.get("/contact-success", (req, res) => {
-  res.render("contact-success", { Title: "Success!" });
+  res.render("contact-success", { title: "Success!" });
 });
 
 app.post('/contact', (req, res) => {

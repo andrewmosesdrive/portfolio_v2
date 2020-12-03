@@ -2,7 +2,7 @@
     <div class="row jumbo-nav-row">
         <div class="col-md-8">
             <div class="jumbotron bg-dark shadow">
-                <h1 class="display-3" style="color: #ececec;"><span style="color: #7332af;">Featured</span> Projects
+                <h1 class="display-3" style="color: #ececec;"><span style="color: #9b5ed4;">Featured</span> Projects
                 </h1>
                 <hr class="my-4">
                 <h5 style="color: #ececec;">Hover over a tile for details, then give it a click to view the
@@ -10,9 +10,6 @@
                     repository on GitHub</h5>
             </div>
         </div>
-        {{!-- <div class="col-md-4 chart-container">
-        <canvas id="myChart" class="myChart" height="260px"></canvas>
-    </div> --}}
         <div class="col-md-4 btn-col">
             <div class="btn-group-vertical">
                 <div class="navigation-headline">
@@ -31,7 +28,7 @@
                 <a href="{{url}}" target="_blank"><img id="overlay-img" class="overlay-img shadow"
                         src="{{openGraphImageUrl}}" alt="Still image of {{name}}">
                     <div class="overlay-text">
-                        <h5 class="overlay-title">{{name}}</h5>
+                        <h6 class="overlay-title">{{name}}</h6>
                         <br>
                         <h6 class="overlay-subtext">{{description}}</h6>
                     </div>
@@ -43,46 +40,16 @@
 
     <div class="row fab-row d-flex justify-content-center">
         <div class="">
-            <a href="https://github.com/andrewmosesdrive" target="_blank"><i class="fab fa-github fa-3x"></i></a>
+            <a href="https://github.com/andrewmosesdrive" target="_blank" rel="noreferrer"><i class="fab fa-github fa-3x"></i></a>
         </div>
         <div class="">
-            <a href="https://www.linkedin.com/in/andrewjmoses/" target="_blank"><i class="fab fa-linkedin-in fa-3x"></i></a>
+            <a href="https://www.linkedin.com/in/andrewjmoses/" target="_blank" rel="noreferrer"><i class="fab fa-linkedin-in fa-3x"></i></a>
         </div>
         <div class="">
-            <a href="https://www.instagram.com/amwriteswords/" target="_blank"><i class="fab fa-instagram fa-3x text-dark"></i></a>
+            <a href="https://www.instagram.com/amwriteswords/" target="_blank" rel="noreferrer"><i class="fab fa-instagram fa-3x text-dark"></i></a>
         </div>
         <div class="">
-            <a href="https://www.amazon.com/All-Things-Never-Had-Guts-ebook/dp/B0852XZFQN" target="_blank"><i class="fab fa-amazon fa-3x text-dark"></i></a>
+            <a href="https://www.amazon.com/All-Things-Never-Had-Guts-ebook/dp/B0852XZFQN" target="_blank" rel="noreferrer"><i class="fab fa-amazon fa-3x text-dark"></i></a>
         </div>
     </div>
 </div>
-
-
-{{!-- <script>
-    let myChart = document.getElementById('myChart').getContext("2d");
-    let languageChart = new Chart(myChart, {
-        type: 'doughnut',
-        data: {
-            labels: ['JavaScript', 'Handlebars', 'CSS', 'HTML'],
-            datasets: [{
-                label: 'Repository Language Makeup',
-                data: [12, 19, 3, 5],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                ],
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script> --}}
