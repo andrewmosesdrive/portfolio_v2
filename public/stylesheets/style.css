@@ -57,15 +57,15 @@ a:active {
 }
 
 .btn-contact {
-    background-color: #7332af;
-    color: white;
-    width: 80px !important;
-    height: 80px !important;
-    border-radius: 50% !important;
-    margin: 18px;
-    animation-duration: 1.66s;
-    animation-name: slidein-to-left;
-  }
+  background-color: #7332af;
+  color: white;
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50% !important;
+  margin: 18px;
+  animation-duration: 1.66s;
+  animation-name: slidein-to-left;
+}
 
 .btn-about {
   background-color: #7332af;
@@ -98,14 +98,14 @@ a:active {
 
 /* this button styling is specific to the about page, to otherwise keep the button slide in timings consistent */
 .btn-contact-aboutpg {
-    background-color: #7332af;
-    color: white;
-    width: 80px !important;
-    height: 80px !important;
-    border-radius: 50% !important;
-    margin: 18px;
-    animation-duration: 2.33s;
-    animation-name: slidein-to-left;
+  background-color: #7332af;
+  color: white;
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50% !important;
+  margin: 18px;
+  animation-duration: 2.33s;
+  animation-name: slidein-to-left;
 }
 
 .overlay {
@@ -178,7 +178,6 @@ a:active {
 }
 
 .btn-email {
-    background-color: #7332af;
-    color: white;
+  background-color: #7332af;
+  color: white;
 }
-
