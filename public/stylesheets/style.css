@@ -181,3 +181,17 @@ a:active {
   background-color: #7332af;
   color: white;
 }
+
+.img-container-icon {
+    height: 300px;
+    width: 100%;
+    background: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.devicon {
+    font-size: 18rem;
+}
