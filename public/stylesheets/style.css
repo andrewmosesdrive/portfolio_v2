@@ -206,3 +206,14 @@ a:active {
 .devicon {
   font-size: 18rem;
 }
+
+.card-tools {
+    background: none;
+    margin-top: 40px;
+}
+
+.carousel {
+    margin-top: 40px;
+}
+
+
