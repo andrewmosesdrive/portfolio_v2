@@ -3,17 +3,20 @@ const exphbs = require("express-handlebars");
 const fetch = require("node-fetch");
 const nodemailer = require("nodemailer");
 const bodyParser = require('body-parser');
+const fs = require("fs");
+const path = require("path");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 8080;
 const YAHOO_USER = process.env.YAHOO_USER;
 const YAHOO_PASS = process.env.YAHOO_PASS;
 
+
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -55,12 +58,26 @@ const headers = {
   Authorization: "bearer " + githubUser.accessToken,
 };
 
+// for serving a resume
+app.get('/resume', function (req, res) {
+  const filePath = "/public/pdf/resume.pdf";
+
+  fs.readFile(__dirname + filePath , function (err, data){
+      res.contentType("application/pdf");
+      res.send(data);
+  });
+});
+
 app.get("/", (req, res) => {
   res.render("about", { title: "About" });
 });
 
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
+});
+
+app.get("/resume", (req, res) => {
+  res.render("resume", { title: "Resume" });
 });
 
 app.get("/portfolio", (req, res) => {
@@ -74,7 +91,6 @@ app.get("/portfolio", (req, res) => {
     .then((apiText) => {
       const data = JSON.parse(apiText);
       const currentProjects = data["data"]["user"]["pinnedItems"]["nodes"];
-      // console.log(currentProjects);
       res.render("portfolio", { currentProjects, title: "Portfolio" });
     })
     .catch((error) =>
