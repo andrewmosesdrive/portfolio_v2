@@ -13,6 +13,8 @@ const YAHOO_PASS = process.env.YAHOO_PASS;
 
 
 const app = express();
+const compression = require('compression');
+app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
