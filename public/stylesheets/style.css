@@ -27,7 +27,7 @@ a:active {
 }
 
 .jumbotron {
-  animation-duration: .55s;
+  animation-duration: 0.55s;
   animation-name: slidein-to-left;
 }
 
@@ -41,6 +41,10 @@ a:active {
     margin-left: 0%;
     width: 100%;
   }
+}
+
+.profile_image {
+  
 }
 
 .navigation-headline {
@@ -194,7 +198,7 @@ a:active {
   color: white;
 }
 
-.img-container-icon {
+/* .img-container-icon {
   height: 300px;
   width: 100%;
   background: none;
@@ -202,19 +206,28 @@ a:active {
   justify-content: center;
   flex-direction: row;
   align-items: center;
-}
+} */
 
 .devicon {
-  font-size: 18rem;
+  font-size: 8rem;
+}
+
+.devicon-container {
+  transform-origin: 100px 100px;
+  transition: all .5s ease-in-out;
+  margin-top: 25px;
+  /* margin-right: 8px; */
+}
+
+.devicon-container:hover {
+  transform: scale(1.1);
 }
 
 .card-tools {
-    background: none;
-    margin-top: 40px;
+  background: none;
+  margin-top: 40px;
 }
 
-.carousel {
-    margin-top: 40px;
-}
-
-
+/* .carousel {
+  margin-top: 40px;
+} */
