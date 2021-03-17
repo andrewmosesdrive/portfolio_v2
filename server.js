@@ -62,7 +62,7 @@ const headers = {
 
 // for serving a resume
 app.get('/resume', function (req, res) {
-  const filePath = "/public/pdf/resume_2_12.pdf";
+  const filePath = "/public/pdf/resume_3_16.pdf";
 
   fs.readFile(__dirname + filePath , function (err, data){
       res.contentType("application/pdf");
